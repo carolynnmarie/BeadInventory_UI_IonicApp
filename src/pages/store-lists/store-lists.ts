@@ -17,7 +17,7 @@ import { StoreListProvider, ProjectStoreListProvider } from '../../providers';
 export class StoreListsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public storeListProvider: StoreListProvider, public projectListProvider: ProjectStoreListProvider) {
+    public storeListProvider: StoreListProvider) {
   }
 
   ionViewDidLoad() {

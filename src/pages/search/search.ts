@@ -19,7 +19,6 @@ type Page = PageItem
   templateUrl: 'search.html',
 })
 export class SearchPage {
-
   resultPage: Page
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
