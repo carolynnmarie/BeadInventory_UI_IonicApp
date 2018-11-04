@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular/umd';
-import { StoreListProvider, ProjectStoreListProvider } from '../../providers';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GeneralListProvider} from '../../providers/general-list/general-list';
 
 /**
  * Generated class for the StoreListsPage page.
@@ -17,7 +17,7 @@ import { StoreListProvider, ProjectStoreListProvider } from '../../providers';
 export class StoreListsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public storeListProvider: StoreListProvider) {
+    public storeListProvider: GeneralListProvider) {
   }
 
   ionViewDidLoad() {

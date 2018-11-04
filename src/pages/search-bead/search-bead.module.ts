@@ -8,6 +8,7 @@ import { SearchBeadPage } from './search-bead';
   ],
   imports: [
     IonicPageModule.forChild(SearchBeadPage),
+    
   ],
 })
 export class SearchBeadPageModule {}

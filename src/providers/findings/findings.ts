@@ -14,7 +14,6 @@ export class FindingsProvider {
   public FINDINGS_API = this.API + '/findings';
 
   constructor(public http: HttpClient) {
-    console.log('Hello FindingsProvider Provider');
   }
 
 }

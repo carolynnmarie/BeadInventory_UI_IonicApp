@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular/umd';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BeadsProvider } from '../../providers/beads/beads';
 import { FindingsProvider } from '../../providers/findings/findings';
 import { StringWireProvider } from '../../providers/string-wire/string-wire';
-import { SearchResultsPage } from '../search-results/search-results';
 
 
 interface PageItem {
@@ -19,7 +18,9 @@ type Page = PageItem
   templateUrl: 'search.html',
 })
 export class SearchPage {
-  resultPage: Page
+  
+  resultPage: Page;
+  beads: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public beadProvider: BeadsProvider, 
@@ -30,8 +31,11 @@ export class SearchPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+    this.beadProvider.getBead().subscribe(beads=>{
+      this.beads = beads;
+    });
   }
+  
 
   openPage(page: PageItem){
     this.navCtrl.setRoot(page.component)

@@ -15,7 +15,7 @@ export class BeadsProvider {
   public API = 'http://localhost:8080';
   public BEEDS_API = this.API + '/beads';
 
-  constructor(public http: HttpClient, public params: HttpParams) {
+  constructor(public http: HttpClient) {
   }
 
   getAll():Observable<any>{
@@ -30,6 +30,10 @@ export class BeadsProvider {
     return this.http.get(this.BEEDS_API,{
       params: new HttpParams().set('material',material)
     });
+  }
+
+  getBead():Observable<any>{
+    return this.http.get(this.BEEDS_API + '/beads');
   }
 
   getAllOfMaterialAndColor(material:Materials, color:string):Observable<any>{

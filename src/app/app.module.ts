@@ -1,8 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular/umd';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -11,17 +10,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SearchPage } from '../pages/search/search';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPageModule } from '../pages/search/search.module';
-import { GeneralListProvider } from '../providers/general-list/general-list';
 import { StoreListsPage } from '../pages/store-lists/store-lists';
 import { StoreListsPageModule } from '../pages/store-lists/store-lists.module';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    SearchPage,
-    StoreListsPage
+   // SearchPage,
+   // StoreListsPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +42,6 @@ import { StoreListsPageModule } from '../pages/store-lists/store-lists.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GeneralListProvider,
   ]
 })
 export class AppModule {}
