@@ -21,6 +21,7 @@ export class SearchPage {
   
   resultPage: Page;
   beads: Array<any>;
+  beadString: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public beadProvider: BeadsProvider, 
@@ -31,14 +32,22 @@ export class SearchPage {
   }
 
   ionViewDidLoad() {
-    this.beadProvider.getBead().subscribe(beads=>{
+    this.beadProvider.getAll().subscribe(beads=>{
       this.beads = beads;
+      beads.forEach(bead => {
+        
+      });
     });
   }
-  
 
-  openPage(page: PageItem){
-    this.navCtrl.setRoot(page.component)
+  toString(bead: any):string{
+    return 'material: ' + bead.material + ', shape: ' + bead.shape + ', size: ' + bead.size + 
   }
+
+
+  // openPage(page: PageItem){
+  //   this.navCtrl.setRoot(page.component)
+  // }
+
 
 }

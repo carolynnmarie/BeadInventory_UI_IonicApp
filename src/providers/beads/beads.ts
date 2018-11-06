@@ -21,6 +21,7 @@ export class BeadsProvider {
   getAll():Observable<any>{
     return this.http.get(this.BEEDS_API);
   }
+  
 
   getAllOrderByMaterial():Observable<any>{
     return this.http.get(this.BEEDS_API + '/getAllOrderByMaterial');
@@ -33,7 +34,7 @@ export class BeadsProvider {
   }
 
   getBead():Observable<any>{
-    return this.http.get(this.BEEDS_API + '/beads');
+    return this.http.get(this.BEEDS_API + '/bead');
   }
 
   getAllOfMaterialAndColor(material:Materials, color:string):Observable<any>{
@@ -60,7 +61,7 @@ export class BeadsProvider {
     } else{
       result = this.http.post(this.BEEDS_API,bead);
     }
-    return result;
+    return result._catch(error => Observable.throw(error));
   }
 
   update(id:number,bead:any):Observable<any>{

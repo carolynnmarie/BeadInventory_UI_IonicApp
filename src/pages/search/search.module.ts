@@ -19,8 +19,8 @@ import { HttpClientModule } from '../../../node_modules/@angular/common/http';
     FindingsProvider,
     StringWireProvider
   ],
-  exports:[
-    SearchPage
-  ]
+  // exports:[
+  //   SearchPage
+  // ]
 })
 export class SearchPageModule {}
