@@ -29,7 +29,7 @@ export class SearchPage {
   }
 
   openPage(page: PageItem){
-    this.navCtrl.setRoot(page.component)
+    this.navCtrl.push(page.component)
   }
 
 }

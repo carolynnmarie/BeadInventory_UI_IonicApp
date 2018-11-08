@@ -12,20 +12,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchPageModule } from '../pages/search/search.module';
 import { StoreListsPage } from '../pages/store-lists/store-lists';
 import { StoreListsPageModule } from '../pages/store-lists/store-lists.module';
+import { HomePageModule } from '../pages/home/home.module';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     TabsPage,
-   // SearchPage,
-   // StoreListsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    HomePageModule,
     SearchPageModule,
     StoreListsPageModule,
     
@@ -42,6 +41,7 @@ import { StoreListsPageModule } from '../pages/store-lists/store-lists.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+//    ApiProvider,
   ]
 })
 export class AppModule {}

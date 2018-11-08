@@ -15,6 +15,7 @@ import { BeadsProvider } from '../../providers';
   templateUrl: 'search-bead.html',
 })
 export class SearchBeadPage {
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public beadProvider: BeadsProvider ) {
   }

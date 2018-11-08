@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { StoreListsPage } from './store-lists';
 import { HttpClientModule } from '@angular/common/http';
-import { GeneralListProvider } from '../../providers/general-list/general-list';
+import { GeneralListProvider } from '../../providers';
 
 @NgModule({
   declarations: [
@@ -11,9 +11,6 @@ import { GeneralListProvider } from '../../providers/general-list/general-list';
   imports: [
     IonicPageModule.forChild(StoreListsPage),
     HttpClientModule
-  ],
-  exports: [
-    StoreListsPage
   ],
   providers: [
     GeneralListProvider,

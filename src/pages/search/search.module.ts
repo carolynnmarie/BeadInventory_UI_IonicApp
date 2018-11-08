@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SearchPage } from './search';
-import { BeadsProvider } from '../../providers/beads/beads';
-import { FindingsProvider } from '../../providers/findings/findings';
-import { StringWireProvider } from '../../providers/string-wire/string-wire';
+import { BeadsProvider } from '../../providers';
+import { FindingsProvider } from '../../providers';
+import { StringWireProvider } from '../../providers';
 import { HttpClientModule } from '../../../node_modules/@angular/common/http';
 
 @NgModule({
@@ -19,8 +19,5 @@ import { HttpClientModule } from '../../../node_modules/@angular/common/http';
     FindingsProvider,
     StringWireProvider
   ],
-  // exports:[
-  //   SearchPage
-  // ]
 })
 export class SearchPageModule {}
