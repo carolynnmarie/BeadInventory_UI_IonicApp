@@ -22,7 +22,6 @@ export class BeadsProvider {
     return this.http.get(this.BEEDS_API);
   }
   
-
   getAllOrderByMaterial():Observable<any>{
     return this.http.get(this.BEEDS_API + '/getAllOrderByMaterial');
   }

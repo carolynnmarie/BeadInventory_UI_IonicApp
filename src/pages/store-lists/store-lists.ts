@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GeneralListProvider} from '../../providers/general-list/general-list';
+import { SpecificListPage } from '../specific-list/specific-list';
 
 /**
  * Generated class for the StoreListsPage page.
@@ -16,12 +17,22 @@ import { GeneralListProvider} from '../../providers/general-list/general-list';
 })
 export class StoreListsPage {
 
+  storeLists: Array<any>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public storeListProvider: GeneralListProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StoreListsPage');
+    this.storeListProvider.getAll().subscribe(storeLists =>{
+      this.storeLists = storeLists;
+      });
+  }
+
+  openList(storeList: any){
+    this.navCtrl.push('SpecificListPage',{storeList:storeList})
   }
 
 }
+
+
