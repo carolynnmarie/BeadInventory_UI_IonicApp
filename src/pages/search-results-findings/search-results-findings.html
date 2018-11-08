@@ -1,0 +1,15 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>searchResultsFindings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngFor = "let finding of findings">
+        <ion-item>
+          {{finding.description}}
+        </ion-item>
+      </ion-list>
+</ion-content>

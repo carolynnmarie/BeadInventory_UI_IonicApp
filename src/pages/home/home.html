@@ -12,5 +12,26 @@
     </button>
   </div>
   </ion-list>
+  <ion-list>
+      <div padding>
+      <button ion-item *ngFor="let page of displayPages" (click)="openPage(page)">
+        {{page.title}}
+      </button>
+    </div>
+    </ion-list>
+
+  <!-- <ion-list>
+    <div padding>
+      <button ion-item (click)="openResultPage(beads)">
+        Display Beads
+      </button>
+      <button ion-item (click)="openResultPage(findings)">
+        Display Findings
+      </button>
+      <button ion-item (click)="openResultPage(stringingMaterials)">
+        Display Stringing Materials
+      </button>
+    </div>
+  </ion-list> -->
 </ion-content>
 <ion-nav [root]="rootPage"></ion-nav>

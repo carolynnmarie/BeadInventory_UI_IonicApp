@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StringWireProvider } from '../../providers';
 
 /**
- * Generated class for the SearchStringingMaterialsPage page.
+ * Generated class for the SearchResultsStringingMaterialsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +11,20 @@ import { StringWireProvider } from '../../providers';
 
 @IonicPage()
 @Component({
-  selector: 'page-search-stringing-materials',
-  templateUrl: 'search-stringing-materials.html',
+  selector: 'page-search-results-stringing-materials',
+  templateUrl: 'search-results-stringing-materials.html',
 })
-export class SearchStringingMaterialsPage {
+export class SearchResultsStringingMaterialsPage {
 
   stringingMaterials: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    public stringWireProvider: StringWireProvider) {
+              public stringingProvider: StringWireProvider) {
   }
 
   ionViewDidLoad() {
-    this.stringWireProvider.getAll().subscribe(stringing => { this.stringingMaterials = stringing;});
+    this.stringingProvider.getAll().subscribe(stringingMaterials => 
+      {this.stringingMaterials = stringingMaterials;});
   }
 
 }

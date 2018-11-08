@@ -1,0 +1,14 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Beads Search Results</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor = "let bead of beads">
+    <ion-item>
+      {{bead.description}}
+    </ion-item>
+  </ion-list>
+</ion-content>

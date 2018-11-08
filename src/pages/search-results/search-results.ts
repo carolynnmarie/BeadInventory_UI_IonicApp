@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { Observable } from '../../../node_modules/rxjs';
 
 /**
  * Generated class for the SearchResultsPage page.
@@ -15,11 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchResultsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  result: Array<any>;
+  display: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public results: Observable<any>) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchResultsPage');
   }
 
 }
