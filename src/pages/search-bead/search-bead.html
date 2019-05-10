@@ -5,7 +5,14 @@
 </ion-header>
 
 <ion-content padding>
-  
+  <ion-item>Filter By:</ion-item>
+  <ion-searchbar placeholder="Materials" (ionInput)="searchMaterials($event)"></ion-searchbar>
+
+  <ion-list *ngFor = "let bead of beads">
+    <ion-item>
+      {{bead.description}}
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 

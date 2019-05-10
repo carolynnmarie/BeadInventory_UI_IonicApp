@@ -15,15 +15,9 @@ export class BeadsProvider extends ApiProvider {
     this.API = this.API + '/beads';
   }
 
-  // getAll():Observable<any>{
-  //   return this.http.get(this.BeadApi);
-  // }
-
-  // getAllOfMaterial(material:Materials):Observable<any>{
-  //   return this.http.get(this.BeadApi,{
-  //     params: new HttpParams().set('material',material)
-  //   });
-  // }
+  getAll():Observable<any>{
+    return this.http.get(this.API);
+  }
 
   // getById(id: string){
   //   return this.http.get(this.BeadApi + '/' + id);
@@ -33,8 +27,23 @@ export class BeadsProvider extends ApiProvider {
     return this.http.get(this.API + '/getAllOrderByMaterial');
   }
 
-  getBead():Observable<any>{
-    return this.http.get(this.API + '/bead');
+  getBead(id:number):Observable<any>{
+    let params = new HttpParams();
+    params.append('id',id.toString());
+    return this.http.get(this.API + '/' + id, {params:params});
+  }
+
+  getAllOfMaterial(material:Materials):Observable<any>{
+    let params = new HttpParams();
+    params.append('material',material);
+    return this.http.get(this.API = '/material',
+    {params:params})
+  }
+
+  getAllOfColor(color:string):Observable<any>{
+    let params = new HttpParams();
+    params.append('color', color);
+    return this.http.get(this.API + '/color', {params:params});
   }
 
   getAllOfMaterialAndColor(material:Materials, color:string):Observable<any>{
@@ -50,6 +59,9 @@ export class BeadsProvider extends ApiProvider {
     {params: new HttpParams().set('quantity',quantity.toString())});
   }
 
-  
+  // updateOne(bead:any, id:number):Observable<any>{
+  //   return this.http.put()
+  // }
+
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 
 /**
  * Generated class for the SearchResultsPage page.

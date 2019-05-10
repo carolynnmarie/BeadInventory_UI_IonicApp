@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BeadsProvider } from '../../providers';
+import { Materials } from '../../EnumMaterial';
+import { Observable } from 'rxjs';
+import { PageItem } from '../search/search';
 
-/**
- * Generated class for the SearchBeadPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,14 +12,26 @@ import { BeadsProvider } from '../../providers';
   templateUrl: 'search-bead.html',
 })
 export class SearchBeadPage {
-  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public beadProvider: BeadsProvider ) {
+  page: PageItem;
+  beads: Array<any>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public beadProvider: BeadsProvider ) {
+      this.page = {title: "Bead Search Result Page", component: "SearchResultBeadPage"};
   }
-
   
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchBeadPage');
   }
+
+  initializeBeads(){
+    this.beadProvider.getAll().subscribe(beads => {this.beads = beads;});
+  }
+
+  searchMaterials(material: Materials){
+    this.beadProvider.getAllOfMaterial(material).subscribe(beads => {this.beads = beads;});
+  }
+
+
 
 }

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import {HomePage} from './home';
-import { HttpClientModule } from '../../../node_modules/@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 //import { BeadsProvider, FindingsProvider, StringWireProvider } from '../../providers';
+
+import {HomePage} from './home';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { HttpClientModule } from '../../../node_modules/@angular/common/http';
   ],
   imports: [
     IonicPageModule.forChild(HomePage),
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forChild()
   ],
 })
 export class HomePageModule {}

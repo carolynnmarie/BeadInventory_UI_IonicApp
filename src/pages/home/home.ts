@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Observable } from '../../../node_modules/rxjs';
-import { BeadsProvider, FindingsProvider, StringWireProvider } from '../../providers';
+import { Observable } from 'rxjs';
+//import { BeadsProvider, FindingsProvider, StringWireProvider } from '../../providers';
 
 interface PageItem {
   title: string
